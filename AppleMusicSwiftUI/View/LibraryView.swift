@@ -10,31 +10,16 @@ import SwiftUI
 struct LibraryView: View {
     var body: some View {
         NavigationView {
-            TabView {
-                VStack(alignment: .center) {
+                VStack {
                     Text("Ищете свою музыку?")
                         .font(.system(size: 30))
                         .fontWeight(.medium)
+
                     Text("Здесь появится купленная Вами в iTunes Store музыка")
                         .font(.system(size: 22))
                         .foregroundColor(.secondary)
                         .multilineTextAlignment(.center)
                 } .padding()
-                .tabItem {
-                    Image(systemName: "music.note.house.fill")
-                    Text("Медиатека")
-                }.tag(1)
-                Text("Tab Content 2")
-                    .tabItem {
-                        Image(systemName: "dot.radiowaves.left.and.right")
-                        Text("Радио")
-                    }.tag(2)
-                Text("Tab Content 3")
-                    .tabItem {
-                        Image(systemName: "magnifyingglass")
-                        Text("Поиск")
-                    }.tag(3)
-            }
             .navigationTitle("Медиатека")
             .navigationBarItems(trailing: Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
                 Text("Править")
@@ -42,11 +27,5 @@ struct LibraryView: View {
                     .foregroundColor(.red)
             }))
         }
-    }
-}
-
-struct LibraryView_Previews: PreviewProvider {
-    static var previews: some View {
-        LibraryView()
     }
 }
