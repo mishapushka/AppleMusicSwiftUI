@@ -11,6 +11,7 @@
 		04CE701E266523D80030EEBA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CE701D266523D80030EEBA /* ContentView.swift */; };
 		04CE7020266523DB0030EEBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04CE701F266523DB0030EEBA /* Assets.xcassets */; };
 		04CE7023266523DB0030EEBA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04CE7022266523DB0030EEBA /* Preview Assets.xcassets */; };
+		04CE702D2666073F0030EEBA /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CE702C2666073F0030EEBA /* LibraryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		04CE701F266523DB0030EEBA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04CE7022266523DB0030EEBA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		04CE7024266523DB0030EEBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04CE702C2666073F0030EEBA /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 			children = (
 				04CE701B266523D80030EEBA /* AppleMusicSwiftUIApp.swift */,
 				04CE701D266523D80030EEBA /* ContentView.swift */,
+				04CE702C2666073F0030EEBA /* LibraryView.swift */,
 				04CE701F266523DB0030EEBA /* Assets.xcassets */,
 				04CE7024266523DB0030EEBA /* Info.plist */,
 				04CE7021266523DB0030EEBA /* Preview Content */,
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04CE701E266523D80030EEBA /* ContentView.swift in Sources */,
+				04CE702D2666073F0030EEBA /* LibraryView.swift in Sources */,
 				04CE701C266523D80030EEBA /* AppleMusicSwiftUIApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
