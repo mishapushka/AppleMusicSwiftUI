@@ -11,13 +11,14 @@ struct LibraryView: View {
     var body: some View {
         NavigationView {
             TabView {
-                VStack {
+                VStack(alignment: .center) {
                     Text("Ищете свою музыку?")
                         .font(.system(size: 30))
                         .fontWeight(.medium)
                     Text("Здесь появится купленная Вами в iTunes Store музыка")
                         .font(.system(size: 22))
                         .foregroundColor(.secondary)
+                        .multilineTextAlignment(.center)
                 } .padding()
                 .tabItem {
                     Image(systemName: "music.note.house.fill")
@@ -37,6 +38,8 @@ struct LibraryView: View {
             .navigationTitle("Медиатека")
             .navigationBarItems(trailing: Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
                 Text("Править")
+                    .fontWeight(.regular)
+                    .foregroundColor(.red)
             }))
         }
     }
