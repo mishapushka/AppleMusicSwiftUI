@@ -1,5 +1,5 @@
 //
-//  TabBar.swift
+//  App.swift
 //  AppleMusicSwiftUI
 //
 //  Created by mac on 02.06.2021.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct TabBar: View {
+struct App: View {
     @State var current = 2
 
     var body: some View {
