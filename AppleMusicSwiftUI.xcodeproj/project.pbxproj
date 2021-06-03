@@ -58,7 +58,7 @@
 		04CE701A266523D80030EEBA /* AppleMusicSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
-				04CE701B266523D80030EEBA /* AppleMusicSwiftUIApp.swift */,
+				04CE703B266776F20030EEBA /* App */,
 				04CE703626675CBE0030EEBA /* View */,
 				04CE701F266523DB0030EEBA /* Assets.xcassets */,
 				04CE7024266523DB0030EEBA /* Info.plist */,
@@ -79,8 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				04CE701D266523D80030EEBA /* ContentView.swift */,
-				04CE702C2666073F0030EEBA /* LibraryView.swift */,
-				04CE703B266776F20030EEBA /* App */,
+				04CE704F2668C8F70030EEBA /* Modules */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -88,10 +87,52 @@
 		04CE703B266776F20030EEBA /* App */ = {
 			isa = PBXGroup;
 			children = (
+				04CE701B266523D80030EEBA /* AppleMusicSwiftUIApp.swift */,
+			);
+			name = App;
+			path = View/App;
+			sourceTree = "<group>";
+		};
+		04CE704E2668C8DE0030EEBA /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				04CE702C2666073F0030EEBA /* LibraryView.swift */,
+				04CE70502668C90D0030EEBA /* Models */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		04CE704F2668C8F70030EEBA /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				04CE704E2668C8DE0030EEBA /* Library */,
+				04CE70512668C9310030EEBA /* Radio */,
+				04CE70522668C93A0030EEBA /* Search */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		04CE70502668C90D0030EEBA /* Models */ = {
+			isa = PBXGroup;
+			children = (
 				04CE703826675D030030EEBA /* Miniplayer.swift */,
 				04CE703D2667771E0030EEBA /* App.swift */,
 			);
-			path = App;
+			path = Models;
+			sourceTree = "<group>";
+		};
+		04CE70512668C9310030EEBA /* Radio */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Radio;
+			sourceTree = "<group>";
+		};
+		04CE70522668C93A0030EEBA /* Search */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

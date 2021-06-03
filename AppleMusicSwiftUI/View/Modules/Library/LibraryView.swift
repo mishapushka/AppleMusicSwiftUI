@@ -20,6 +20,7 @@ struct LibraryView: View {
                         .foregroundColor(.secondary)
                         .multilineTextAlignment(.center)
                 } .padding()
+                
             .navigationTitle("Медиатека")
             .navigationBarItems(trailing: Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
                 Text("Править")
