@@ -30,6 +30,7 @@ var items = [
 struct ListViewModel: View {
 
     @State private var multiSelection = Set<UUID>()
+    @State private var editMode = EditMode.active
 
     var body: some View {
         NavigationView {
@@ -46,6 +47,8 @@ struct ListViewModel: View {
             }
             .navigationTitle("Медиатека")
             .toolbar { EditButton() }
+            .environment(\.editMode, $editMode)
+            .navigationBarTitle(Text("Selection Demo \(multiSelection.count)"))
             .navigationBarItems(trailing: Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
                 Text("Готово")
                     .fontWeight(.medium)
