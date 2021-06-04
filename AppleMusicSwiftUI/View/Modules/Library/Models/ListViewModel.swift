@@ -26,6 +26,9 @@ var items = [
     ListItem(icon: "arrow.down.circle", name: "Загружено"),
     ListItem(icon: "music.note.house", name: "Домашняя коллекция")
 ]
+func move(from source: IndexSet, to destination: Int) {
+    items.move(fromOffsets: source, toOffset: destination)
+}
 
 struct ListViewModel: View {
 
@@ -34,6 +37,7 @@ struct ListViewModel: View {
 
     var body: some View {
         NavigationView {
+            VStack(alignment: .center, spacing: 5) {
             List(selection: $multiSelection) {
                 ForEach(items) {item in
                     HStack {
@@ -42,8 +46,10 @@ struct ListViewModel: View {
                             .font(.system(size: 20))
                         Text(item.name)
                             .font(.system(size: 20))
+                        Spacer()
                     }
                 }
+                .onMove(perform: move)
             }
             .navigationTitle("Медиатека")
             .toolbar { EditButton() }
@@ -54,6 +60,7 @@ struct ListViewModel: View {
                     .fontWeight(.medium)
                     .foregroundColor(.red)
             }))
+        }
         }
     }
 }
