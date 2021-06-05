@@ -8,28 +8,39 @@
 import SwiftUI
 
 struct LibraryView: View {
-    @State private var willMoveToNextScreen = false
+
+    @State private var showFilter = false
+    @State private var editMode = EditMode.active
 
     var body: some View {
         NavigationView {
-                VStack {
-                    Text("Ищете свою музыку?")
-                        .font(.system(size: 30))
-                        .fontWeight(.medium)
-
-                    Text("Здесь появится купленная Вами в iTunes Store музыка")
-                        .font(.system(size: 22))
-                        .foregroundColor(.secondary)
-                        .multilineTextAlignment(.center)
-                } .padding()
-            .navigationTitle("Медиатека")
-            .navigationBarItems(trailing: Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-                NavigationLink(destination: ListViewModel()) {
-                Text("Править")
-                    .fontWeight(.regular)
-                    .foregroundColor(.red)
+            VStack {
+                if showFilter {
+                    LibraryItem()
+                } else {
+                    LibraryDescription()
                 }
-            }))
+            }
+            .navigationTitle("Медиатека")
+            .accentColor(.red)
+            .environment(\.editMode,
+                         .constant(showFilter ? EditMode.active : EditMode.inactive))
+            .navigationBarItems(trailing:
+                                    Button(action: {
+                                        showFilter.toggle()
+                                    }, label: {
+                                        if showFilter {
+                                            Text("Править")
+                                                .font(.system(size: 17))
+                                                .foregroundColor(.red)
+
+                                        } else {
+                                            Text("Готово")
+                                                .font(.system(size: 17))
+                                                .foregroundColor(.red)
+                                        }
+                                    }))
         }
     }
 }
+

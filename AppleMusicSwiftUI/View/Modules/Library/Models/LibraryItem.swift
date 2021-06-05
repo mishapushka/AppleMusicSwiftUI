@@ -1,5 +1,5 @@
 //
-//  ListViewModel.swift
+//  LibraryItem.swift
 //  AppleMusicSwiftUI
 //
 //  Created by mac on 03.06.2021.
@@ -30,43 +30,24 @@ func move(from source: IndexSet, to destination: Int) {
     items.move(fromOffsets: source, toOffset: destination)
 }
 
-struct ListViewModel: View {
+struct LibraryItem: View {
 
     @State private var multiSelection = Set<UUID>()
     @State private var editMode = EditMode.active
 
     var body: some View {
-        NavigationView {
-            List(selection: $multiSelection) {
-
-                ForEach(items) {item in
-                    
-                    HStack {
-                        Image(systemName: item.icon)
-                            .foregroundColor(.red)
-                            .font(.system(size: 20))
-                        Text(item.name)
-                            .font(.system(size: 20))
-                    }
+        List(selection: $multiSelection) {
+            ForEach(items) {item in
+                HStack {
+                    Image(systemName: item.icon)
+                        .foregroundColor(.red)
+                    Text(item.name)
                 }
-                .onMove(perform: move)
+                .font(.system(size: 20))
             }
-            .navigationTitle("Медиатека")
-            .environment(\.editMode, $editMode)
-            .navigationBarItems(trailing: Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-                NavigationLink(destination: LibraryView()) {
-                Text("Готово")
-                    .fontWeight(.medium)
-                    .foregroundColor(.red)
-                }
-            }))
+            .onMove(perform: move)
         }
+        .listStyle(InsetListStyle())
     }
 }
 
-
-struct ListViewModel_Previews: PreviewProvider {
-    static var previews: some View {
-        ListViewModel()
-    }
-}
