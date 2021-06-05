@@ -37,30 +37,29 @@ struct ListViewModel: View {
 
     var body: some View {
         NavigationView {
-            VStack(alignment: .center, spacing: 5) {
             List(selection: $multiSelection) {
+
                 ForEach(items) {item in
+                    
                     HStack {
                         Image(systemName: item.icon)
                             .foregroundColor(.red)
                             .font(.system(size: 20))
                         Text(item.name)
                             .font(.system(size: 20))
-                        Spacer()
                     }
                 }
                 .onMove(perform: move)
             }
             .navigationTitle("Медиатека")
-            .toolbar { EditButton() }
             .environment(\.editMode, $editMode)
-            .navigationBarTitle(Text("Selection Demo \(multiSelection.count)"))
             .navigationBarItems(trailing: Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                NavigationLink(destination: LibraryView()) {
                 Text("Готово")
                     .fontWeight(.medium)
                     .foregroundColor(.red)
+                }
             }))
-        }
         }
     }
 }

@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct LibraryView: View {
+    @State private var willMoveToNextScreen = false
+
     var body: some View {
         NavigationView {
                 VStack {
@@ -20,12 +22,13 @@ struct LibraryView: View {
                         .foregroundColor(.secondary)
                         .multilineTextAlignment(.center)
                 } .padding()
-                
             .navigationTitle("Медиатека")
             .navigationBarItems(trailing: Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                NavigationLink(destination: ListViewModel()) {
                 Text("Править")
                     .fontWeight(.regular)
                     .foregroundColor(.red)
+                }
             }))
         }
     }
