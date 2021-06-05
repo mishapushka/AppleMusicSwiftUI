@@ -33,7 +33,6 @@ func move(from source: IndexSet, to destination: Int) {
 struct LibraryItem: View {
 
     @State private var multiSelection = Set<UUID>()
-    @State private var editMode = EditMode.active
 
     var body: some View {
         List(selection: $multiSelection) {
