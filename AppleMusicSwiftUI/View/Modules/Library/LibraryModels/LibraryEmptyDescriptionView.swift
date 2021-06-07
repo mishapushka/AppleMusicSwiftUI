@@ -7,19 +7,19 @@
 
 import SwiftUI
 
-struct LibraryDescription: View {
+struct LibraryEmptyDescriptionView: View {
     var body: some View {
 
         VStack {
             Text("Ищете свою музыку?")
                 .font(.system(size: 30))
-                .fontWeight(.medium)
+                .bold()
 
             Text("Здесь появится купленная Вами в iTunes Store музыка")
                 .font(.system(size: 22))
                 .foregroundColor(.secondary)
                 .multilineTextAlignment(.center)
-        } .padding()
+        }.padding()
     }
 }
 

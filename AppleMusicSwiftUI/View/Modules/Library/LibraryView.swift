@@ -16,9 +16,9 @@ struct LibraryView: View {
         NavigationView {
             VStack {
                 if showFilter {
-                    LibraryItem()
+                    LibraryListItemView()
                 } else {
-                    LibraryDescription()
+                    LibraryEmptyDescriptionView()
                 }
             }
             .navigationTitle("Медиатека")
@@ -31,12 +31,10 @@ struct LibraryView: View {
                                     }, label: {
                                         if showFilter {
                                             Text("Править")
-                                                .font(.system(size: 17))
                                                 .foregroundColor(.red)
 
                                         } else {
                                             Text("Готово")
-                                                .font(.system(size: 17))
                                                 .foregroundColor(.red)
                                         }
                                     }))
