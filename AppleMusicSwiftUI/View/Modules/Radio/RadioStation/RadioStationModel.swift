@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct RadioStationModel {
+struct RadioStationModel: Identifiable, Hashable {
+    var id = UUID()
     var stationType: String
     var musicType: String
     var slogan: String
@@ -15,7 +16,7 @@ struct RadioStationModel {
 }
 
 extension RadioStationModel {
-    static var items = [
+    static var stationItems = [
         RadioStationModel(stationType: "Новый выпуск", musicType: "Музыкальный базар с Бастой",
                           slogan: "Новое шоу", image: "radio station basta"),
         RadioStationModel(stationType: "Избранная радиостанция", musicType: "Популярное",

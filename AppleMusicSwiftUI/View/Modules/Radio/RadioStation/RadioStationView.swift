@@ -8,8 +8,27 @@
 import SwiftUI
 
 struct RadioStationView: View {
+    private let items = RadioStationModel.stationItems
+    private let rows = [
+        GridItem(.fixed(50)),
+        GridItem(.fixed(50)),
+        GridItem(.fixed(50)),
+        GridItem(.fixed(50))
+    ]
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ScrollView(.horizontal) {
+            LazyHGrid(rows: rows, alignment: .center) {
+                ForEach(items, id: \.self) { item in
+
+                        Text(item.stationType)
+                        Text(item.musicType)
+                        Text(item.slogan)
+                        Image(systemName: item.image)
+
+                }
+            }.frame(height: 150)
+        }
     }
 }
 
