@@ -55,6 +55,6 @@ extension ArtistShowModel {
         ArtistShowModel(showType: "mau5trap presents...",
                         artistName: "deadmau5", image: "artist deadmau"),
         ArtistShowModel(showType: "The Candy Shop",
-                        artistName: "Charli XCX", image: "artist charil")
+                        artistName: "Charli XCX", image: "charil")
     ]
 }

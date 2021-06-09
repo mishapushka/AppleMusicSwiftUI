@@ -24,7 +24,7 @@ struct RadioStationView: View {
                         Text(item.stationType)
                         Text(item.musicType)
                         Text(item.slogan)
-                        Image(systemName: item.image)
+                        Image(item.image)
 
                 }
             }.frame(height: 150)
