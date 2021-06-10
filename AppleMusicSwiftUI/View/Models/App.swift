@@ -23,7 +23,7 @@ struct App: View {
                             Text("Медиатека")
                         }
 
-                    Text("Радио")
+                    RadioView()
                         .tag(1)
                         .tabItem {
                             Image(systemName: "dot.radiowaves.left.and.right")

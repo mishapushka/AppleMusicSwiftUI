@@ -36,6 +36,7 @@ struct Miniplayer: View {
             .padding(.horizontal)
         }
         .frame(height: 80)
+        .background(Color(.white))
         .offset(y: -48)
     }
 }
