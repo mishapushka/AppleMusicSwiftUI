@@ -19,11 +19,11 @@ struct RadioView: View {
 
                     Divider()
                         .padding(.top, 4)
-                    Text("Шоу артистов")
+                    Text("Станции")
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .font(.system(size: 23))
                         .padding()
-                    ArtistShowView()
+                    StationView()
                 }
             }
             .navigationBarTitle("Радио")

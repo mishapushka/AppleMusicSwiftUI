@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct ArtistShowView: View {
-    private var items = ArtistShowModel.showItems
+struct StationView: View {
+    private var items = StationModel.showItems
     private var columns: [GridItem] = Array(repeating: .init(.flexible()), count: 1)
     
     var body: some View {
@@ -23,14 +23,15 @@ struct ArtistShowView: View {
                             .frame(width: 150, height: 150)
                             .cornerRadius(15)
 
-                        VStack {
-                            Text(item.showType)
-                                .font(.system(size: 22))
-                            Text(item.artistName ?? "")
-                                .font(.system(size: 18))
+                        VStack(alignment: .leading) {
+                            Text(item.stationName)
+                                .font(.system(size: 20))
+                                .multilineTextAlignment(.leading)
+                            Text(item.stationType)
+                                .font(.system(size: 17))
                                 .foregroundColor(.secondary)
                                 .multilineTextAlignment(.leading)
-                        }.lineLimit(2)
+                        }.lineLimit(3)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding()
                     }
@@ -43,6 +44,6 @@ struct ArtistShowView: View {
 
 struct ArtistShowView_Previews: PreviewProvider {
     static var previews: some View {
-        ArtistShowView()
+        StationView()
     }
 }

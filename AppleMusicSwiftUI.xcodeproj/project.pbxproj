@@ -12,8 +12,8 @@
 		04BAC048266E4C1D00834FD1 /* RadioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BAC047266E4C1D00834FD1 /* RadioView.swift */; };
 		04BAC04D266E4C8000834FD1 /* RadioStationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BAC04C266E4C8000834FD1 /* RadioStationView.swift */; };
 		04BAC050266E4C9E00834FD1 /* RadioStationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BAC04F266E4C9E00834FD1 /* RadioStationModel.swift */; };
-		04BAC053266E4CBD00834FD1 /* ArtistShowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BAC052266E4CBD00834FD1 /* ArtistShowView.swift */; };
-		04BAC056266E4CCD00834FD1 /* ArtistShowModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BAC055266E4CCD00834FD1 /* ArtistShowModel.swift */; };
+		04BAC053266E4CBD00834FD1 /* StationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BAC052266E4CBD00834FD1 /* StationView.swift */; };
+		04BAC056266E4CCD00834FD1 /* StationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BAC055266E4CCD00834FD1 /* StationModel.swift */; };
 		04CE701C266523D80030EEBA /* AppleMusicSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CE701B266523D80030EEBA /* AppleMusicSwiftUIApp.swift */; };
 		04CE701E266523D80030EEBA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CE701D266523D80030EEBA /* ContentView.swift */; };
 		04CE7020266523DB0030EEBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04CE701F266523DB0030EEBA /* Assets.xcassets */; };
@@ -30,8 +30,8 @@
 		04BAC047266E4C1D00834FD1 /* RadioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioView.swift; sourceTree = "<group>"; };
 		04BAC04C266E4C8000834FD1 /* RadioStationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioStationView.swift; sourceTree = "<group>"; };
 		04BAC04F266E4C9E00834FD1 /* RadioStationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioStationModel.swift; sourceTree = "<group>"; };
-		04BAC052266E4CBD00834FD1 /* ArtistShowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistShowView.swift; sourceTree = "<group>"; };
-		04BAC055266E4CCD00834FD1 /* ArtistShowModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistShowModel.swift; sourceTree = "<group>"; };
+		04BAC052266E4CBD00834FD1 /* StationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationView.swift; sourceTree = "<group>"; };
+		04BAC055266E4CCD00834FD1 /* StationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationModel.swift; sourceTree = "<group>"; };
 		04CE7018266523D80030EEBA /* AppleMusicSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppleMusicSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04CE701B266523D80030EEBA /* AppleMusicSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleMusicSwiftUIApp.swift; sourceTree = "<group>"; };
 		04CE701D266523D80030EEBA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -77,8 +77,8 @@
 		04BAC04B266E4C4900834FD1 /* ArtistShow */ = {
 			isa = PBXGroup;
 			children = (
-				04BAC052266E4CBD00834FD1 /* ArtistShowView.swift */,
-				04BAC055266E4CCD00834FD1 /* ArtistShowModel.swift */,
+				04BAC052266E4CBD00834FD1 /* StationView.swift */,
+				04BAC055266E4CCD00834FD1 /* StationModel.swift */,
 			);
 			path = ArtistShow;
 			sourceTree = "<group>";
@@ -254,7 +254,7 @@
 			files = (
 				04BA52CD266BD4AE00130AC3 /* LibraryEmptyDescriptionView.swift in Sources */,
 				04CE701E266523D80030EEBA /* ContentView.swift in Sources */,
-				04BAC053266E4CBD00834FD1 /* ArtistShowView.swift in Sources */,
+				04BAC053266E4CBD00834FD1 /* StationView.swift in Sources */,
 				04BAC050266E4C9E00834FD1 /* RadioStationModel.swift in Sources */,
 				04CE703926675D030030EEBA /* Miniplayer.swift in Sources */,
 				04CE70552668CB730030EEBA /* LibraryListItemView.swift in Sources */,
@@ -264,7 +264,7 @@
 				04BAC04D266E4C8000834FD1 /* RadioStationView.swift in Sources */,
 				04BAC045266DD13400834FD1 /* LibraryItemModel.swift in Sources */,
 				04CE701C266523D80030EEBA /* AppleMusicSwiftUIApp.swift in Sources */,
-				04BAC056266E4CCD00834FD1 /* ArtistShowModel.swift in Sources */,
+				04BAC056266E4CCD00834FD1 /* StationModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
