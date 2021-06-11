@@ -20,6 +20,7 @@ struct RadioView: View {
                     Divider()
                         .padding(.top, 4)
                     Text("Станции")
+                        .bold()
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .font(.system(size: 23))
                         .padding()
