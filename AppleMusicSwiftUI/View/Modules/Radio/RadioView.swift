@@ -15,14 +15,14 @@ struct RadioView: View {
                     Divider()
                         .padding(.top, 4)
                     RadioStationView()
-                        .frame(height: 300)
+                        .frame(height: 340)
 
                     Divider()
                         .padding(.top, 4)
                     Text("Станции")
                         .bold()
                         .frame(maxWidth: .infinity, alignment: .leading)
-                        .font(.system(size: 23))
+                        .font(.system(size: 26))
                         .padding()
                     StationView()
                 }

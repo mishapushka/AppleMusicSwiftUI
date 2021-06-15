@@ -19,27 +19,28 @@ struct RadioStationView: View {
                     VStack {
                         Text(item.stationType)
                             .frame(maxWidth: .infinity, alignment: .leading)
-                            .font(.system(size: 10))
+                            .font(.system(size: 20))
                             .foregroundColor(.secondary)
 
                         Text(item.musicType)
-                            .frame(maxWidth: 370, alignment: .leading)
-                            .font(.system(size: 20))
+                            .frame(maxWidth: 380, alignment: .leading)
+                            .font(.system(size: 22))
                             .lineLimit(2)
                             .fixedSize(horizontal: false, vertical: true)
 
                         Text(item.slogan)
                             .frame(maxWidth: .infinity, alignment: .leading)
-                            .font(.system(size: 20))
+                            .font(.system(size: 22))
                             .foregroundColor(.secondary)
+                            .padding(.bottom, 1)
 
                         Image(item.image)
                             .resizable()
-                            .frame(width: 370, height: 210)
-                            .cornerRadius(10)
-                    }.padding(.leading)
+                            .frame(width: 380, height: 250)
+                            .cornerRadius(6)
+                    }
                 }
-            }
+            }.padding(.leading)
         }
     }
 }
