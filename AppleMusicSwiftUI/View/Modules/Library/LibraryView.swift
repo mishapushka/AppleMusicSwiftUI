@@ -30,11 +30,11 @@ struct LibraryView: View {
                                         showFilter.toggle()
                                     }, label: {
                                         if showFilter {
-                                            Text("Править")
+                                            Text("Готово")
                                                 .foregroundColor(.red)
 
                                         } else {
-                                            Text("Готово")
+                                            Text("Править")
                                                 .foregroundColor(.red)
                                         }
                                     }))
