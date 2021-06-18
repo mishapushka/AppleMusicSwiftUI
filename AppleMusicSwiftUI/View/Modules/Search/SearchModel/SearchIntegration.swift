@@ -11,10 +11,10 @@ import UIKit
 struct SomeView: UIViewControllerRepresentable {
 
   func makeUIViewController(context: Context) -> UIViewController {
-      return SearchView()
+      return SearchCollectionView()
   }
 
   func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
-      // можно оставить пустым
+    
   }
 }
