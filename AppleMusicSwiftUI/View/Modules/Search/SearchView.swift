@@ -7,3 +7,18 @@
 
 import UIKit
 
+class SearchView: UICollectionView {
+
+    lazy var searchBar = UISearchBar()
+
+    lazy var collectionView = UICollectionView()
+
+    func setupHierrarchy() {
+        addSubview(searchBar)
+        addSubview(collectionView)
+    }
+
+    func setupLayout() {
+        
+    }
+}
