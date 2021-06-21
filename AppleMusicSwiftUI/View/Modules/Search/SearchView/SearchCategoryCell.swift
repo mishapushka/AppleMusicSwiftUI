@@ -58,9 +58,9 @@ class SearchCategoryCell: UICollectionViewCell {
         }
     }
 
-    func setup(with profile: CategoryProfile) {
-        categoryImageView.image = UIImage(named: profile.imageName)
-        categoryLabelName.text = profile.name
+    func setup(with profile: SearchCategoryModel) {
+        categoryImageView.image = UIImage(named: profile.image)
+        categoryLabelName.text = profile.text
     }
 }
 

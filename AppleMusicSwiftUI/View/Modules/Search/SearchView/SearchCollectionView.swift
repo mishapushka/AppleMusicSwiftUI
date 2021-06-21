@@ -8,11 +8,11 @@
 import UIKit
 import SnapKit
 
-class SearchCollectionView: UIViewController {
+class SearchCollectionView: UIViewController, UISearchBarDelegate {
 
     // MARK: - Category
 
-    var category = SearchCategoryModel.items
+    var categoryes = SearchCategoryModel.items
 
     // MARK: - Views
 
@@ -31,6 +31,13 @@ class SearchCollectionView: UIViewController {
             frame: .zero,
             collectionViewLayout: UICollectionViewFlowLayout()
         )
+        collectionView.register(HeaderCollectionReusableView.self,
+                                forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+                                withReuseIdentifier: HeaderCollectionReusableView.identifier)
+        collectionView.register(SearchCategoryCell.self,
+                                forCellWithReuseIdentifier: SearchCategoryCell.identifier)
+        collectionView.dataSource = self
+        collectionView.delegate = self
         collectionView.backgroundColor = .white
         return collectionView
     }()
@@ -75,16 +82,21 @@ class SearchCollectionView: UIViewController {
 
 extension SearchCollectionView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        category.count
+        categoryes.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        UICollectionViewCell()
+        let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: SearchCategoryCell.identifier,
+            for: indexPath) as! SearchCategoryCell
+        let category = categoryes[indexPath.row]
+        cell.setup(with: category)
+        return cell
     }
 }
 
-    // MARK: - UISearchBarDelegate
+    // MARK: - UICollectionViewDelegateFlowLayout
 
-extension SearchCollectionView: UISearchBarDelegate {
+extension SearchCollectionView: UICollectionViewDelegateFlowLayout {
 
 }
