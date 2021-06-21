@@ -10,11 +10,12 @@ import SnapKit
 
 class SearchCollectionView: UIViewController {
 
-    // MARK: - Data
+    // MARK: - Category
 
     var category = SearchCategoryModel.items
 
     // MARK: - Views
+
     lazy var searchBar: UISearchBar = {
         let searchBar = UISearchBar()
         searchBar.placeholder = "Ваша Медиатека"
@@ -34,20 +35,30 @@ class SearchCollectionView: UIViewController {
         return collectionView
     }()
 
+    // MARK: - Lifecycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        setupView()
+        setupLayout()
+        setupHierrarchy()
+    }
+
     // MARK: - Settings
 
-    func setupView() {
+    private func setupView() {
 
         collectionView.backgroundColor = .white
     }
 
-    func setupHierrarchy() {
+    private func setupHierrarchy() {
 
-//        addSubview(searchBar)
-//        addSubview(collectionView)
+        view.addSubview(searchBar)
+        view.addSubview(collectionView)
     }
 
-    func setupLayout() {
+    private func setupLayout() {
 
         searchBar.snp.makeConstraints {
             $0.top.leading.trailing.equalToSuperview()
