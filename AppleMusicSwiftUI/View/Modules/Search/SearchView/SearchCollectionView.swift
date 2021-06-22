@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class SearchCollectionView: UIViewController, UISearchBarDelegate {
+class SearchCollectionView: UIViewController {
 
     // MARK: - Category
 
@@ -16,28 +16,43 @@ class SearchCollectionView: UIViewController, UISearchBarDelegate {
 
     // MARK: - Views
 
-    lazy var searchBar: UISearchBar = {
+    private let titleLarge: UILabel = {
+        var title = UILabel()
+        title.text = "Поиск"
+        title.font = UIFont.boldSystemFont(ofSize: 32.0)
+        title.textAlignment = .left
+        title.textColor = .black
+        return title
+    }()
+
+    private let searchBar: UISearchBar = {
         let searchBar = UISearchBar()
         searchBar.placeholder = "Ваша Медиатека"
-        searchBar.delegate = self
+        searchBar.backgroundImage = UIImage()
         return searchBar
+    }()
+
+    private let separatorView: UIImageView = {
+        let view = UIImageView(frame: CGRect(x: 0, y: 0, width: 500, height: 1))
+        view.backgroundColor = .lightGray
+        view.center = view.center
+        view.image = UIImage(named: "divider")
+        return view
     }()
 
     // MARK: - CollectionView
 
-    lazy var collectionView: UICollectionView = {
-        let collectionView = UICollectionView()
+    private let collectionView: UICollectionView = {
+        let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: UICollectionViewFlowLayout.init())
         let flowLayout = UICollectionView(
             frame: .zero,
-            collectionViewLayout: UICollectionViewFlowLayout()
+            collectionViewLayout: UICollectionViewFlowLayout.init()
         )
         collectionView.register(HeaderCollectionReusableView.self,
                                 forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
                                 withReuseIdentifier: HeaderCollectionReusableView.identifier)
         collectionView.register(SearchCategoryCell.self,
                                 forCellWithReuseIdentifier: SearchCategoryCell.identifier)
-        collectionView.dataSource = self
-        collectionView.delegate = self
         collectionView.backgroundColor = .white
         return collectionView
     }()
@@ -46,6 +61,11 @@ class SearchCollectionView: UIViewController, UISearchBarDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        collectionView.showsVerticalScrollIndicator = false
+        collectionView.reloadData()
 
         setupView()
         setupLayout()
@@ -63,17 +83,39 @@ class SearchCollectionView: UIViewController, UISearchBarDelegate {
 
         view.addSubview(searchBar)
         view.addSubview(collectionView)
+        view.addSubview(titleLarge)
+        view.addSubview(separatorView)
     }
 
     private func setupLayout() {
 
+        titleLarge.snp.makeConstraints {
+            $0.top.equalToSuperview().inset(50)
+            $0.bottom.equalTo(searchBar.snp.top)
+            $0.leading.trailing.equalToSuperview()
+            $0.width.equalToSuperview()
+        }
+
         searchBar.snp.makeConstraints {
-            $0.top.leading.trailing.equalToSuperview()
+            $0.top.equalTo(titleLarge.snp.bottom)
+            $0.bottom.equalTo(separatorView.snp.top).inset(-5)
+            $0.leading.trailing.equalToSuperview()
+            $0.width.equalToSuperview().inset(-28)
+
+        }
+
+        separatorView.snp.makeConstraints {
+            $0.top.equalTo(searchBar.snp.bottom)
+            $0.bottom.equalTo(collectionView.snp.top).inset(-7)
+            $0.leading.trailing.equalToSuperview()
+            $0.width.equalToSuperview().inset(-50)
         }
 
         collectionView.snp.makeConstraints {
-            $0.top.equalTo(searchBar.snp.bottom)
-            $0.leading.trailing.bottom.equalToSuperview()
+            $0.top.equalTo(separatorView.snp.bottom)
+            $0.bottom.equalToSuperview().inset(-65)
+            $0.leading.trailing.equalToSuperview()
+            $0.width.equalToSuperview().inset(-33)
         }
     }
 }
@@ -99,4 +141,45 @@ extension SearchCollectionView: UICollectionViewDataSource {
 
 extension SearchCollectionView: UICollectionViewDelegateFlowLayout {
 
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+
+        let width = itemWidth(for: view.frame.width, spacing: 12)
+
+        return CGSize(width: width, height: 125)
+    }
+
+    func itemWidth(for width: CGFloat, spacing: CGFloat) -> CGFloat {
+        let itemsInRow: CGFloat = 2
+
+        let totalSpacing: CGFloat = 2 * spacing + (itemsInRow - 1) * spacing
+        let finalWidth = (width - totalSpacing) / itemsInRow - 10
+
+        return floor(finalWidth)
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 12, left: 0, bottom: 12, right: 12)
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 12
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return -3
+    }
+
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+
+        let header = collectionView.dequeueReusableSupplementaryView(
+            ofKind: UICollectionView.elementKindSectionHeader,
+            withReuseIdentifier: HeaderCollectionReusableView.identifier,
+            for: indexPath) as! HeaderCollectionReusableView
+        header.configure()
+        return header
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: view.frame.size.width, height: 30)
+    }
 }

@@ -19,7 +19,7 @@ class HeaderCollectionReusableView: UICollectionReusableView {
         return label
     }()
 
-    public func setupHierrarchy() {
+    public func configure() {
 
         addSubview(label)
     }

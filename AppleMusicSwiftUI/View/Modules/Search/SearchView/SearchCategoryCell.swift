@@ -45,7 +45,7 @@ class SearchCategoryCell: UICollectionViewCell {
     }
 
     private func setupLayout() {
-
+        
         categoryImageView.snp.makeConstraints {
             $0.leading.trailing.top.equalToSuperview()
             $0.height.equalToSuperview().inset(Metric.heightImageView)

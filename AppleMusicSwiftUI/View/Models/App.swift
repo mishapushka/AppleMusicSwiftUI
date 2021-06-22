@@ -30,7 +30,7 @@ struct App: View {
                             Text("Радио")
                         }
 
-                    Text("Поиск")
+                    SearchView()
                         .tag(2)
                         .tabItem {
                             Image(systemName: "magnifyingglass")
