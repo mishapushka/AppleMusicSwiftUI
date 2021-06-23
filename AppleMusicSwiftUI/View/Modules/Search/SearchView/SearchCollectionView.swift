@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SnapKit
 
 class SearchCollectionView: UIViewController {
 
@@ -67,9 +66,9 @@ class SearchCollectionView: UIViewController {
         collectionView.showsVerticalScrollIndicator = false
         collectionView.reloadData()
 
+        setupHierrarchy()
         setupView()
         setupLayout()
-        setupHierrarchy()
     }
 
     // MARK: - Settings
@@ -89,34 +88,39 @@ class SearchCollectionView: UIViewController {
 
     private func setupLayout() {
 
-        titleLarge.snp.makeConstraints {
-            $0.top.equalToSuperview().inset(50)
-            $0.bottom.equalTo(searchBar.snp.top)
-            $0.leading.trailing.equalToSuperview()
-            $0.width.equalToSuperview()
-        }
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        titleLarge.translatesAutoresizingMaskIntoConstraints = false
+        searchBar.translatesAutoresizingMaskIntoConstraints = false
+        separatorView.translatesAutoresizingMaskIntoConstraints = false
 
-        searchBar.snp.makeConstraints {
-            $0.top.equalTo(titleLarge.snp.bottom)
-            $0.bottom.equalTo(separatorView.snp.top).inset(-5)
-            $0.leading.trailing.equalToSuperview()
-            $0.width.equalToSuperview().inset(-28)
-
-        }
-
-        separatorView.snp.makeConstraints {
-            $0.top.equalTo(searchBar.snp.bottom)
-            $0.bottom.equalTo(collectionView.snp.top).inset(-7)
-            $0.leading.trailing.equalToSuperview()
-            $0.width.equalToSuperview().inset(-50)
-        }
-
-        collectionView.snp.makeConstraints {
-            $0.top.equalTo(separatorView.snp.bottom)
-            $0.bottom.equalToSuperview().inset(-65)
-            $0.leading.trailing.equalToSuperview()
-            $0.width.equalToSuperview().inset(-33)
-        }
+        NSLayoutConstraint.activate([
+            titleLarge.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 50),
+            titleLarge.bottomAnchor.constraint(equalTo: searchBar.topAnchor),
+            titleLarge.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 23),
+            titleLarge.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -23),
+            titleLarge.widthAnchor.constraint(equalTo: view.widthAnchor)
+        ])
+        NSLayoutConstraint.activate([
+            searchBar.topAnchor.constraint(equalTo: titleLarge.bottomAnchor),
+            searchBar.bottomAnchor.constraint(equalTo: separatorView.topAnchor, constant: -5),
+            searchBar.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 14),
+            searchBar.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -14),
+            searchBar.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -28)
+        ])
+        NSLayoutConstraint.activate([
+            separatorView.topAnchor.constraint(equalTo: searchBar.bottomAnchor),
+            separatorView.bottomAnchor.constraint(equalTo: collectionView.topAnchor, constant: -7),
+            separatorView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 23),
+            separatorView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -23),
+            separatorView.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -50)
+        ])
+        NSLayoutConstraint.activate([
+            collectionView.topAnchor.constraint(equalTo: separatorView.bottomAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -65),
+            collectionView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 23),
+            collectionView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -23),
+            collectionView.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -33)
+        ])
     }
 }
 

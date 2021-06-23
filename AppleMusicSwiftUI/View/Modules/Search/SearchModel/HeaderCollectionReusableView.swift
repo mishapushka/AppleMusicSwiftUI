@@ -14,7 +14,7 @@ class HeaderCollectionReusableView: UICollectionReusableView {
         var label = UILabel()
         label.text = "Поиск по категориям"
         label.font = UIFont.boldSystemFont(ofSize: 22)
-        label.backgroundColor = .black
+        label.backgroundColor = .white
         label.textAlignment = .left
         return label
     }()

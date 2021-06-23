@@ -29,8 +29,8 @@ class SearchCategoryCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: .zero)
 
-        setupLayout()
         setupHierrarchy()
+        setupLayout()
     }
     
     required init?(coder: NSCoder) {
@@ -45,17 +45,21 @@ class SearchCategoryCell: UICollectionViewCell {
     }
 
     private func setupLayout() {
-        
-        categoryImageView.snp.makeConstraints {
-            $0.leading.trailing.top.equalToSuperview()
-            $0.height.equalToSuperview().inset(Metric.heightImageView)
-        }
+        categoryImageView.translatesAutoresizingMaskIntoConstraints = false
+        categoryLabelName.translatesAutoresizingMaskIntoConstraints = false
 
-        categoryLabelName.snp.makeConstraints {
-            $0.leading.equalToSuperview().inset(Metric.leadingLabelName)
-            $0.trailing.equalToSuperview().inset(Metric.trailingLabelName)
-            $0.top.equalTo(categoryImageView.snp.bottom).inset(Metric.topLabelName)
-        }
+        NSLayoutConstraint.activate([
+            categoryImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            categoryImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            categoryImageView.topAnchor.constraint(equalTo: contentView.topAnchor),
+            categoryImageView.heightAnchor.constraint(equalToConstant: Metric.heightImageView)
+        ])
+
+        NSLayoutConstraint.activate([
+            categoryLabelName.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Metric.leadingLabelName),
+            categoryLabelName.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: Metric.trailingLabelName),
+            categoryLabelName.topAnchor.constraint(equalTo: categoryImageView.bottomAnchor, constant: Metric.topLabelName)
+        ])
     }
 
     func setup(with profile: SearchCategoryModel) {
