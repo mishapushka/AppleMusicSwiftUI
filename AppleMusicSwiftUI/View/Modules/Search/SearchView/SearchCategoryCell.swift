@@ -77,12 +77,12 @@ extension SearchCategoryCell: ReusableView {
 extension SearchCategoryCell {
 
     enum Metric {
-        static let heightImageView: CGFloat = 150
+        static let heightImageView: CGFloat = 110
         static let leadingLabelName: CGFloat = 16
         static let trailingLabelName: CGFloat = -16
         static let topLabelName: CGFloat = -30
 
-        static let fontLabelName: CGFloat = 15
+        static let fontLabelName: CGFloat = 13
         static let layerImageView: CGFloat = 8
     }
 }
