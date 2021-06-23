@@ -99,32 +99,47 @@ class SearchCollectionView: UIViewController {
         separatorView.translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate([
-            titleLarge.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: Metric.titleLargeTop),
+            titleLarge.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor,
+                                            constant: Metric.titleLargeTop),
             titleLarge.bottomAnchor.constraint(equalTo: searchBar.topAnchor),
-            titleLarge.leftAnchor.constraint(equalTo: view.leftAnchor, constant: Metric.titleLargeLeft),
-            titleLarge.rightAnchor.constraint(equalTo: view.rightAnchor, constant: Metric.titleLargeRight),
+            titleLarge.leftAnchor.constraint(equalTo: view.leftAnchor,
+                                             constant: Metric.titleLargeLeft),
+            titleLarge.rightAnchor.constraint(equalTo: view.rightAnchor,
+                                              constant: Metric.titleLargeRight),
             titleLarge.widthAnchor.constraint(equalTo: view.widthAnchor)
         ])
         NSLayoutConstraint.activate([
             searchBar.topAnchor.constraint(equalTo: titleLarge.bottomAnchor),
-            searchBar.bottomAnchor.constraint(equalTo: separatorView.topAnchor, constant: Metric.searchBarBottom),
-            searchBar.leftAnchor.constraint(equalTo: view.leftAnchor, constant: Metric.searchBarLeft),
-            searchBar.rightAnchor.constraint(equalTo: view.rightAnchor, constant: Metric.searchBarRight),
-            searchBar.widthAnchor.constraint(equalTo: view.widthAnchor, constant: Metric.searchBarWidth)
+            searchBar.bottomAnchor.constraint(equalTo: separatorView.topAnchor,
+                                              constant: Metric.searchBarBottom),
+            searchBar.leftAnchor.constraint(equalTo: view.leftAnchor,
+                                            constant: Metric.searchBarLeft),
+            searchBar.rightAnchor.constraint(equalTo: view.rightAnchor,
+                                             constant: Metric.searchBarRight),
+            searchBar.widthAnchor.constraint(equalTo: view.widthAnchor,
+                                             constant: Metric.searchBarWidth)
         ])
         NSLayoutConstraint.activate([
             separatorView.topAnchor.constraint(equalTo: searchBar.bottomAnchor),
-            separatorView.bottomAnchor.constraint(equalTo: collectionView.topAnchor, constant: Metric.separatorViewBottom),
-            separatorView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: Metric.separatorViewLeft),
-            separatorView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: Metric.separatorViewRight),
-            separatorView.widthAnchor.constraint(equalTo: view.widthAnchor, constant: Metric.separatorViewWidth)
+            separatorView.bottomAnchor.constraint(equalTo: collectionView.topAnchor,
+                                                  constant: Metric.separatorViewBottom),
+            separatorView.leftAnchor.constraint(equalTo: view.leftAnchor,
+                                                constant: Metric.separatorViewLeft),
+            separatorView.rightAnchor.constraint(equalTo: view.rightAnchor,
+                                                 constant: Metric.separatorViewRight),
+            separatorView.widthAnchor.constraint(equalTo: view.widthAnchor,
+                                                 constant: Metric.separatorViewWidth)
         ])
         NSLayoutConstraint.activate([
             collectionView.topAnchor.constraint(equalTo: separatorView.bottomAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: Metric.collectionViewBottom),
-            collectionView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: Metric.collectionViewLeft),
-            collectionView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: Metric.collectionViewRight),
-            collectionView.widthAnchor.constraint(equalTo: view.widthAnchor, constant: Metric.collectionViewWidth)
+            collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor,
+                                                   constant: Metric.collectionViewBottom),
+            collectionView.leftAnchor.constraint(equalTo: view.leftAnchor,
+                                                 constant: Metric.collectionViewLeft),
+            collectionView.rightAnchor.constraint(equalTo: view.rightAnchor,
+                                                  constant: Metric.collectionViewRight),
+            collectionView.widthAnchor.constraint(equalTo: view.widthAnchor,
+                                                  constant: Metric.collectionViewWidth)
         ])
     }
 }
@@ -196,6 +211,8 @@ extension SearchCollectionView: UICollectionViewDelegateFlowLayout {
         return CGSize(width: view.frame.size.width, height: Func.referenceSizeHight)
     }
 }
+
+    // MARK: - Metrics
 
 extension SearchCollectionView {
     

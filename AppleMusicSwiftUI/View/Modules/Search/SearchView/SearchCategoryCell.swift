@@ -10,6 +10,8 @@ import Foundation
 
 class SearchCategoryCell: UICollectionViewCell {
 
+    // MARK: - Views
+    
     lazy var categoryImageView: UIImageView = {
         var imageView = UIImageView(frame: .zero)
         imageView.contentMode = .scaleAspectFill
@@ -36,6 +38,8 @@ class SearchCategoryCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+
+    // MARK: - Settings
     
     private func setupHierrarchy() {
 
@@ -73,6 +77,8 @@ extension SearchCategoryCell: ReusableView {
         return String(describing: self)
     }
 }
+
+    // MARK: - Metrics
 
 extension SearchCategoryCell {
 
