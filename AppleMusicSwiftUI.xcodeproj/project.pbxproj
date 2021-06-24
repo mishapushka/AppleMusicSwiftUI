@@ -28,7 +28,6 @@
 		04CE702D2666073F0030EEBA /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CE702C2666073F0030EEBA /* LibraryView.swift */; };
 		04CE703926675D030030EEBA /* Miniplayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CE703826675D030030EEBA /* Miniplayer.swift */; };
 		04CE70552668CB730030EEBA /* LibraryListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CE70542668CB730030EEBA /* LibraryListItemView.swift */; };
-		23AFE6C2171F28F816959011 /* Pods_AppleMusicSwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C93F2059AF7DAD31E4316C12 /* Pods_AppleMusicSwiftUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,9 +54,6 @@
 		04CE702C2666073F0030EEBA /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
 		04CE703826675D030030EEBA /* Miniplayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Miniplayer.swift; sourceTree = "<group>"; };
 		04CE70542668CB730030EEBA /* LibraryListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryListItemView.swift; sourceTree = "<group>"; };
-		294AE9128EF7D9A592535316 /* Pods-AppleMusicSwiftUI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppleMusicSwiftUI.release.xcconfig"; path = "Target Support Files/Pods-AppleMusicSwiftUI/Pods-AppleMusicSwiftUI.release.xcconfig"; sourceTree = "<group>"; };
-		C93F2059AF7DAD31E4316C12 /* Pods_AppleMusicSwiftUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppleMusicSwiftUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		EFF04623EFAAEBA180ECC0F8 /* Pods-AppleMusicSwiftUI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppleMusicSwiftUI.debug.xcconfig"; path = "Target Support Files/Pods-AppleMusicSwiftUI/Pods-AppleMusicSwiftUI.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +61,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				23AFE6C2171F28F816959011 /* Pods_AppleMusicSwiftUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,7 +121,6 @@
 				04CE701A266523D80030EEBA /* AppleMusicSwiftUI */,
 				04CE7019266523D80030EEBA /* Products */,
 				FB2C1253B95990CD37BB0507 /* Pods */,
-				CB44C64B9A4EB52AD3EEDCF5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -224,19 +218,9 @@
 			path = Search;
 			sourceTree = "<group>";
 		};
-		CB44C64B9A4EB52AD3EEDCF5 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				C93F2059AF7DAD31E4316C12 /* Pods_AppleMusicSwiftUI.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		FB2C1253B95990CD37BB0507 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				EFF04623EFAAEBA180ECC0F8 /* Pods-AppleMusicSwiftUI.debug.xcconfig */,
-				294AE9128EF7D9A592535316 /* Pods-AppleMusicSwiftUI.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -248,11 +232,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 04CE7027266523DB0030EEBA /* Build configuration list for PBXNativeTarget "AppleMusicSwiftUI" */;
 			buildPhases = (
-				EC05F094B81AF4259103F1D9 /* [CP] Check Pods Manifest.lock */,
 				04CE7014266523D80030EEBA /* Sources */,
 				04CE7015266523D80030EEBA /* Frameworks */,
 				04CE7016266523D80030EEBA /* Resources */,
-				929983F8AE9CA639BCCF1708 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -306,48 +288,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		929983F8AE9CA639BCCF1708 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-AppleMusicSwiftUI/Pods-AppleMusicSwiftUI-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-AppleMusicSwiftUI/Pods-AppleMusicSwiftUI-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AppleMusicSwiftUI/Pods-AppleMusicSwiftUI-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		EC05F094B81AF4259103F1D9 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-AppleMusicSwiftUI-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		04CE7014266523D80030EEBA /* Sources */ = {
@@ -497,7 +437,6 @@
 		};
 		04CE7028266523DB0030EEBA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EFF04623EFAAEBA180ECC0F8 /* Pods-AppleMusicSwiftUI.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -520,7 +459,6 @@
 		};
 		04CE7029266523DB0030EEBA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 294AE9128EF7D9A592535316 /* Pods-AppleMusicSwiftUI.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
