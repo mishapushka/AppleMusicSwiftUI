@@ -7,10 +7,6 @@
 
 import Foundation
 
-protocol ReusableView: AnyObject {
-    static var identifier: String { get }
-}
-
 struct SearchCategoryModel {
     var text: String
     var image: String

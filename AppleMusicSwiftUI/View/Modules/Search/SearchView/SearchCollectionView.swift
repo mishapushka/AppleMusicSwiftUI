@@ -11,11 +11,11 @@ class SearchCollectionView: UIViewController {
 
     // MARK: - Category
 
-    var categoryes = SearchCategoryModel.items
+    var categories = SearchCategoryModel.items
 
     // MARK: - Views
 
-    private let titleLarge: UILabel = {
+    private let largeTitle: UILabel = {
         var title = UILabel()
         title.text = "Поиск"
         title.font = UIFont.boldSystemFont(ofSize: Views.titleLargeFont)
@@ -87,29 +87,29 @@ class SearchCollectionView: UIViewController {
 
         view.addSubview(searchBar)
         view.addSubview(collectionView)
-        view.addSubview(titleLarge)
+        view.addSubview(largeTitle)
         view.addSubview(separatorView)
     }
 
     private func setupLayout() {
 
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        titleLarge.translatesAutoresizingMaskIntoConstraints = false
+        largeTitle.translatesAutoresizingMaskIntoConstraints = false
         searchBar.translatesAutoresizingMaskIntoConstraints = false
         separatorView.translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate([
-            titleLarge.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor,
+            largeTitle.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor,
                                             constant: Metric.titleLargeTop),
-            titleLarge.bottomAnchor.constraint(equalTo: searchBar.topAnchor),
-            titleLarge.leftAnchor.constraint(equalTo: view.leftAnchor,
+            largeTitle.bottomAnchor.constraint(equalTo: searchBar.topAnchor),
+            largeTitle.leftAnchor.constraint(equalTo: view.leftAnchor,
                                              constant: Metric.titleLargeLeft),
-            titleLarge.rightAnchor.constraint(equalTo: view.rightAnchor,
+            largeTitle.rightAnchor.constraint(equalTo: view.rightAnchor,
                                               constant: Metric.titleLargeRight),
-            titleLarge.widthAnchor.constraint(equalTo: view.widthAnchor)
+            largeTitle.widthAnchor.constraint(equalTo: view.widthAnchor)
         ])
         NSLayoutConstraint.activate([
-            searchBar.topAnchor.constraint(equalTo: titleLarge.bottomAnchor),
+            searchBar.topAnchor.constraint(equalTo: largeTitle.bottomAnchor),
             searchBar.bottomAnchor.constraint(equalTo: separatorView.topAnchor,
                                               constant: Metric.searchBarBottom),
             searchBar.leftAnchor.constraint(equalTo: view.leftAnchor,
@@ -144,57 +144,57 @@ class SearchCollectionView: UIViewController {
     }
 }
 
-    // MARK: - UICollectionViewDataSource
+// MARK: - UICollectionViewDataSource
 
 extension SearchCollectionView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        categoryes.count
+        categories.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: SearchCategoryCell.identifier,
             for: indexPath) as! SearchCategoryCell
-        let category = categoryes[indexPath.row]
+        let category = categories[indexPath.row]
         cell.setup(with: category)
         return cell
     }
 }
 
-    // MARK: - UICollectionViewDelegateFlowLayout
+// MARK: - UICollectionViewDelegateFlowLayout
 
 extension SearchCollectionView: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
-        let width = itemWidth(for: view.frame.width, spacing: Func.widthSpacing)
+        let width = itemWidth(for: view.frame.width, spacing: Value.widthSpacing)
 
-        return CGSize(width: width, height: Func.widthHeight)
+        return CGSize(width: width, height: Value.widthHeight)
     }
 
     func itemWidth(for width: CGFloat, spacing: CGFloat) -> CGFloat {
-        let itemsInRow: CGFloat = Func.itemWidthRow
-        let totalSpacing: CGFloat = Func.totalSpacing * spacing + (itemsInRow - 1) * spacing
-        let finalWidth = (width - totalSpacing) / itemsInRow - Func.finalWidth
+        let itemsInRow: CGFloat = Value.itemWidthRow
+        let totalSpacing: CGFloat = Value.totalSpacing * spacing + (itemsInRow - 1) * spacing
+        let finalWidth = (width - totalSpacing) / itemsInRow - Value.finalWidth
 
         return floor(finalWidth)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(
-            top: Func.edgeInsetsTop,
-            left: Func.edgeInsetsLeft,
-            bottom: Func.edgeInsetsBottom,
-            right: Func.edgeInsetsRight
+            top: Value.edgeInsetsTop,
+            left: Value.edgeInsetsLeft,
+            bottom: Value.edgeInsetsBottom,
+            right: Value.edgeInsetsRight
         )
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return Func.minimumLineSpacing
+        return Value.minimumLineSpacing
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return Func.minimumInteritemSpacing
+        return Value.minimumInteritemSpacing
     }
 
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
@@ -208,11 +208,11 @@ extension SearchCollectionView: UICollectionViewDelegateFlowLayout {
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize(width: view.frame.size.width, height: Func.referenceSizeHight)
+        return CGSize(width: view.frame.size.width, height: Value.referenceSizeHight)
     }
 }
 
-    // MARK: - Metrics
+// MARK: - Metrics
 
 extension SearchCollectionView {
     
@@ -245,7 +245,7 @@ extension SearchCollectionView {
         static let collectionViewWidth: CGFloat = -33
     }
 
-    enum Func {
+    enum Value {
         static let widthSpacing: CGFloat = 14
         static let widthHeight: CGFloat = 110
 

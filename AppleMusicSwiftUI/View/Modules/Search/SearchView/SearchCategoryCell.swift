@@ -14,7 +14,7 @@ class SearchCategoryCell: UICollectionViewCell {
     
     lazy var categoryImageView: UIImageView = {
         var imageView = UIImageView(frame: .zero)
-        imageView.contentMode = .scaleAspectFill
+        imageView.contentMode = .scaleToFill
         imageView.clipsToBounds = true
         imageView.layer.cornerRadius = Metric.layerImageView
         return imageView
@@ -60,9 +60,12 @@ class SearchCategoryCell: UICollectionViewCell {
         ])
 
         NSLayoutConstraint.activate([
-            categoryLabelName.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Metric.leadingLabelName),
-            categoryLabelName.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: Metric.trailingLabelName),
-            categoryLabelName.topAnchor.constraint(equalTo: categoryImageView.bottomAnchor, constant: Metric.topLabelName)
+            categoryLabelName.leadingAnchor.constraint(equalTo: contentView.leadingAnchor,
+                                                       constant: Metric.leadingLabelName),
+            categoryLabelName.trailingAnchor.constraint(equalTo: contentView.trailingAnchor,
+                                                        constant: Metric.trailingLabelName),
+            categoryLabelName.topAnchor.constraint(equalTo: categoryImageView.bottomAnchor,
+                                                   constant: Metric.topLabelName)
         ])
     }
 
