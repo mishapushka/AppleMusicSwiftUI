@@ -152,9 +152,9 @@ extension SearchCollectionView: UICollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(
+        guard let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: SearchCategoryCell.identifier,
-            for: indexPath) as! SearchCategoryCell
+                for: indexPath) as? SearchCategoryCell else { return UICollectionViewCell() }
         let category = categories[indexPath.row]
         cell.setup(with: category)
         return cell
