@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  TabBarView.swift
 //  AppleMusicSwiftUI
 //
 //  Created by mac on 31.05.2021.
@@ -7,14 +7,13 @@
 
 import SwiftUI
 
-struct ContentView: View {
-    @State var current = 2
+struct TabBarView: View {
 
     var body: some View {
         ZStack(alignment: Alignment(horizontal: .center, vertical: .bottom),
                content: {
 
-                TabView(selection: $current) {
+                TabView() {
 
                     LibraryView()
                         .tag(0)
@@ -38,13 +37,13 @@ struct ContentView: View {
                         }
                 }
 
-                Miniplayer()
+                MiniplayerView()
                })
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct TabBarView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        TabBarView()
     }
 }

@@ -1,5 +1,5 @@
 //
-//  Miniplayer.swift
+//  MiniplayerView.swift
 //  AppleMusicSwiftUI
 //
 //  Created by mac on 02.06.2021.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Miniplayer: View {
+struct MiniplayerView: View {
     var body: some View {
         VStack {
             HStack(spacing: 15) {
