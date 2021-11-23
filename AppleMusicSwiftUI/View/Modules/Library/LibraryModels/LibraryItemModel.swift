@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct LibraryItemModel: Identifiable, Hashable {
+struct LibraryItemModel: Identifiable {
     var id = UUID()
     var icon: String
     var name: String

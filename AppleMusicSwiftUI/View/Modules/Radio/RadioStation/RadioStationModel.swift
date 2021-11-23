@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct RadioStationModel: Identifiable, Hashable {
+struct RadioStationModel: Identifiable {
     var id = UUID().uuidString
     var stationType: String
     var musicType: String

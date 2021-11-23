@@ -14,7 +14,7 @@ struct RadioStationView: View {
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             LazyHGrid(rows: rows, alignment: .top) {
-                ForEach(items, id: \.self) { item in
+                ForEach(items) { item in
 
                     VStack {
                         Divider()

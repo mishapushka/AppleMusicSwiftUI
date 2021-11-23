@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct StationModel: Identifiable, Hashable {
+struct StationModel: Identifiable {
     var id = UUID().uuidString
     var stationName: String
     var stationType: String
