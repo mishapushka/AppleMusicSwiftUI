@@ -32,13 +32,17 @@ struct StationView: View {
                                 .font(.system(size: 14))
                                 .foregroundColor(.secondary)
                                 .multilineTextAlignment(.leading)
-                        }.lineLimit(3)
+                        }
+                        .lineLimit(3)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding()
                     }
                     Divider()
+                        .padding(.leading, 120)
+                        .padding(.trailing, 10)
                 }
-            }.padding(.horizontal)
+            }
+            .padding(.horizontal)
         }
     }
 }

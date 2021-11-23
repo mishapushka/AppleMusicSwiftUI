@@ -12,13 +12,14 @@ struct RadioView: View {
         NavigationView {
             ScrollView(.vertical, showsIndicators: false) {
                 VStack {
-                    Divider()
-                        .padding(.top, 4)
+                    
                     RadioStationView()
                         .frame(height: 340)
 
                     Divider()
-                        .padding(.top, 4)
+                        .padding(.top, 8)
+                        .padding([.trailing, .leading])
+                    
                     Text("Станции")
                         .bold()
                         .frame(maxWidth: .infinity, alignment: .leading)

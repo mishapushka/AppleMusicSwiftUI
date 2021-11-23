@@ -8,7 +8,7 @@
 import Foundation
 
 struct StationModel: Identifiable, Hashable {
-    var id = UUID()
+    var id = UUID().uuidString
     var stationName: String
     var stationType: String
     var image: String

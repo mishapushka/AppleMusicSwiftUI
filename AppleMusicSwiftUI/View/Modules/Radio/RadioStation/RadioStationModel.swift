@@ -8,7 +8,7 @@
 import Foundation
 
 struct RadioStationModel: Identifiable, Hashable {
-    var id = UUID()
+    var id = UUID().uuidString
     var stationType: String
     var musicType: String
     var slogan: String

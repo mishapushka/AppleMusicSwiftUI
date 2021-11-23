@@ -17,6 +17,8 @@ struct RadioStationView: View {
                 ForEach(items, id: \.self) { item in
 
                     VStack {
+                        Divider()
+
                         Text(item.stationType)
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .font(.system(size: 20))
@@ -40,7 +42,8 @@ struct RadioStationView: View {
                             .cornerRadius(6)
                     }
                 }
-            }.padding(.leading)
+            }
+            .padding(.leading)
         }
     }
 }
